@@ -29,16 +29,48 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 /*---------------------------------------------------------------------------*/
-#ifndef NRF52832_DEF_H_
-#define NRF52832_DEF_H_
+/**
+ * \addtogroup nrf52832-dev
+ * @{
+ *
+ * \defgroup nrf52832-gpio-hal nrf52832 GPIO HAL implementation
+ *
+ * @{
+ *
+ * \file
+ *     Header file for the nrf52832 GPIO HAL functions
+ *
+ * \note
+ *     Do not include this header directly
+ */
 /*---------------------------------------------------------------------------*/
-#include "cm4/cm4-def.h"
+#ifndef GPIO_HAL_ARCH_H_
+#define GPIO_HAL_ARCH_H_
 /*---------------------------------------------------------------------------*/
-#define RTIMER_ARCH_SECOND 62500
+#include "contiki.h"
+#include "nrf_gpio.h"
+
+#include <stdint.h>
 /*---------------------------------------------------------------------------*/
-#define GPIO_HAL_CONF_ARCH_HDR_PATH          "dev/gpio-hal-arch.h"
+#define gpio_hal_arch_interrupt_enable(p)
+#define gpio_hal_arch_interrupt_disable(p)
+
+#define gpio_hal_arch_pin_set_input(p)     nrf_gpio_cfg_input(p, NRF_GPIO_PIN_NOPULL)
+#define gpio_hal_arch_pin_set_output(p)    nrf_gpio_cfg_output(p)
+
+#define gpio_hal_arch_set_pin(p)           nrf_gpio_pin_set(p)
+#define gpio_hal_arch_clear_pin(p)         nrf_gpio_pin_clear(p)
+#define gpio_hal_arch_toggle_pin(p)        nrf_gpio_pin_toggle(p)
+#define gpio_hal_arch_read_pin(p)          nrf_gpio_pin_read(p)
+#define gpio_hal_arch_write_pin(p, v)      nrf_gpio_pin_write(p, v)
+
+#define gpio_hal_arch_set_pins(p)          nrf_gpio_pins_set(p)
+#define gpio_hal_arch_clear_pins(p)        nrf_gpio_pins_clear(p)
+#define gpio_hal_arch_read_pins(p)         (nrf_gpio_pins_read() & p)
 /*---------------------------------------------------------------------------*/
-#define GPIO_HAL_CONF_ARCH_SW_TOGGLE 0
+#endif /* GPIO_HAL_ARCH_H_ */
 /*---------------------------------------------------------------------------*/
-#endif /* NRF52832_DEF_H_ */
-/*---------------------------------------------------------------------------*/
+/**
+ * @}
+ * @}
+ */
