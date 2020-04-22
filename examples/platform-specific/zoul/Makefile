@@ -18,6 +18,6 @@ PLATFORMS_ONLY = zoul
 CONTIKI = ../../..
 
 include $(CONTIKI)/Makefile.dir-variables
-MODULES += $(CONTIKI_NG_DRIVERS_DIR)/bme280
+MODULES += $(CONTIKI_NG_DRIVERS_DIR)/sensor/bme280
 
 include $(CONTIKI)/Makefile.include
