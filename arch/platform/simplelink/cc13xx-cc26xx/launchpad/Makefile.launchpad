@@ -7,3 +7,5 @@ BOARD_TYPE = BOARD_LAUNCHPAD
 BOARD_SOURCEFILES += button-sensor-arch.c leds-arch.c
 
 TARGET_FAMILY_DIRS += launchpad
+
+MODULES += arch/dev/ext-flash

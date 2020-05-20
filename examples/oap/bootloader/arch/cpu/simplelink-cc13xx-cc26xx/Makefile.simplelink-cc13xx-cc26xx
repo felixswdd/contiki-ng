@@ -1,0 +1,5 @@
+PROJECTDIRS += arch/cpu/simplelink-cc13xx-cc26xx
+
+PROJECT_SOURCEFILES += bootloader-arch.c
+
+STARTUP_GCC_SRC = startup-gcc.c

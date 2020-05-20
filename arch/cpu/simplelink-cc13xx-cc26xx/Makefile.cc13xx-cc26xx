@@ -50,6 +50,10 @@ endif
 # the arch/cpu/cc13xx-cc26xx folder.
 CPU_START_SOURCEFILES += ccfg-conf.c startup_cc13xx_cc26xx_gcc.c
 
+# CPU-dependent directories
+CONTIKI_CPU_DIRS += . dev $(SUBFAMILY)
+CONTIKI_CPU_DIRS += rf rf-settings rf-settings/$(DEVICE_FAMILY_LC)
+
 # CPU-dependent source files
 CONTIKI_CPU_SOURCEFILES += rtimer-arch.c    clock-arch.c
 CONTIKI_CPU_SOURCEFILES += watchdog-arch.c  dbg-arch.c
@@ -57,6 +61,8 @@ CONTIKI_CPU_SOURCEFILES += uart0-arch.c     slip-arch.c
 CONTIKI_CPU_SOURCEFILES += gpio-hal-arch.c  int-master-arch.c
 CONTIKI_CPU_SOURCEFILES += random.c         trng-arch.c
 CONTIKI_CPU_SOURCEFILES += spi-arch.c
+
+CONTIKI_CPU_SOURCEFILES += soc-rtc.c
 
 # RF source files
 CONTIKI_CPU_SOURCEFILES += sched.c          data-queue.c
@@ -86,10 +92,6 @@ SDK_DEVICES := $(CORE_SDK)/source/ti/devices/$(SDK_DEVICES_NAME)
 
 EXTERNALDIRS += $(SDK_SOURCE) $(SDK_NORTOS)
 
-# CPU-dependent directories
-CONTIKI_CPU_DIRS += . dev $(SUBFAMILY)
-CONTIKI_CPU_DIRS += rf rf-settings rf-settings/$(DEVICE_FAMILY_LC)
-
 CONTIKI_SOURCEFILES += $(CONTIKI_CPU_SOURCEFILES) $(DEBUG_IO_SOURCEFILES)
 
 ################################################################################
@@ -104,6 +106,7 @@ CONTIKI_SOURCEFILES += $(CONTIKI_CPU_SOURCEFILES) $(DEBUG_IO_SOURCEFILES)
 # Board.h files, as they rely heavily on global variables placed in COMMON to
 # be garbage collected if unused.
 CFLAGS += -fno-common
+CFLAGS += -I $(CORE_SDK)/source/ti/devices/cc13x2_cc26x2/
 
 ################################################################################
 ### Linker configuration

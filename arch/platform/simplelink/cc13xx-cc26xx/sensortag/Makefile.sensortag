@@ -11,3 +11,5 @@ BOARD_SOURCEFILES += mpu-9250-sensor.c opt-3001-sensor.c
 BOARD_SOURCEFILES += tmp-007-sensor.c buzzer.c
 
 TARGET_FAMILY_DIRS += sensortag
+
+MODULES += arch/dev/ext-flash
