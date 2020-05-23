@@ -1,11 +1,11 @@
 ### At the moment this example only supports cc26x0-cc13x0. So make sure that
 ### a simple `make` will try to do something meaningful
-TARGET ?= cc26x0-cc13x0
-BOARD ?= launchpad/cc2650
+#TARGET ?= cc26x0-cc13x0
+#BOARD ?= launchpad/cc2650
 
-ifneq ($(TARGET), cc26x0-cc13x0)
-$(error This example does not support platform $(TARGET))
-endif
+#ifneq ($(TARGET), cc26x0-cc13x0)
+#$(error This example does not support platform $(TARGET))
+#endif
 
 BOOTLOADER = bootloader/bootloader.hex
 GOLDEN_IMAGE = golden-image/golden-image.hex

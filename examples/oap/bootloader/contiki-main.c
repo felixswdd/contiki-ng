@@ -47,13 +47,15 @@
 #include "sys/log.h"
 #define LOG_MODULE "main"
 #ifndef LOG_LEVEL_BOOTLOADER
-#define LOG_LEVEL_BOOTLOADER LOG_LEVEL_NONE
+#define LOG_LEVEL_BOOTLOADER LOG_LEVEL_DBG
 #endif
 #define LOG_LEVEL LOG_LEVEL_BOOTLOADER
 /*---------------------------------------------------------------------------*/
 int
 main(void)
 {
+  LOG_INFO("App Start\n");
+
   int i;
   uint16_t latest;
   ota_firmware_metadata_t *internal_metadata;
@@ -63,6 +65,9 @@ main(void)
   bool newer_in_ext_flash;
 
   bootloader_arch_init();
+
+  bootloader_arch_jump_to_app();
+
 
   clock_init();
   process_init();
