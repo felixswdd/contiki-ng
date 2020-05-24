@@ -41,7 +41,7 @@
 #endif
 
 /* Total internal flash length */
-#define INTERNAL_FLASH_LENGTH 0x00020000
+#define INTERNAL_FLASH_LENGTH 0x00058000
 
 /*
  * Length of the CC13xx/CC26xx CCFG area, high 88 bytes on flash

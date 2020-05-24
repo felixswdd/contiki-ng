@@ -1,0 +1,5 @@
+# for generate-metadata.py
+sudo apt-get install python-setuptools
+pip install crcmod 
+sudo apt install python-magic
+pip install IntelHex

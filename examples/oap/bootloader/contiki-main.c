@@ -54,8 +54,6 @@
 int
 main(void)
 {
-  LOG_INFO("App Start\n");
-
   int i;
   uint16_t latest;
   ota_firmware_metadata_t *internal_metadata;
@@ -65,9 +63,6 @@ main(void)
   bool newer_in_ext_flash;
 
   bootloader_arch_init();
-
-  bootloader_arch_jump_to_app();
-
 
   clock_init();
   process_init();
