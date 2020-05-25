@@ -107,10 +107,10 @@ bootloader_arch_init()
   ti_lib_prcm_load_set();
   while(!ti_lib_prcm_load_get());
 
-  gpio_hal_init();
+//  gpio_hal_init();
 
   leds_init();
-
+  
   /*
    * Disable I/O pad sleep mode and open I/O latches in the AON IOC interface
    * This is only relevant when returning from shutdown (which is what froze

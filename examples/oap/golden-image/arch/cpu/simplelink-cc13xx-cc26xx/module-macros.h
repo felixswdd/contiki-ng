@@ -31,15 +31,15 @@
 /*---------------------------------------------------------------------------*/
 /* Offset the image by FLASH_FW_ORIGIN and reserve space for metadata */
 #if BUILD_WITH_BOOTLOADER_DEBUG
-#define FLASH_FW_ORIGIN     0x00003000
+#define FLASH_FW_ORIGIN     0x00008000
 #else
-#define FLASH_FW_ORIGIN     0x00002000
+#define FLASH_FW_ORIGIN     0x00006000
 #endif
 #define FLASH_FW_LENGTH     (INTERNAL_FLASH_LENGTH - FLASH_FW_ORIGIN - \
                              CCFG_LENGTH - OTA_METADATA_LEN)
 
 /* Total internal flash length */
-#define INTERNAL_FLASH_LENGTH 0x00057FA8
+#define INTERNAL_FLASH_LENGTH 0x00058000
 
 /*
  * Length of the CC13xx/CC26xx CCFG area, high 88 bytes on flash

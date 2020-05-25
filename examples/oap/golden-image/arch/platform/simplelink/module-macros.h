@@ -31,5 +31,5 @@
 /*---------------------------------------------------------------------------*/
 /* Configuration of the OTA external flash map */
 #define OTA_CONF_EXT_FLASH_AREA_COUNT                     4
-#define OTA_CONF_EXT_FLASH_AREA_LEN              0x00057FA8
+#define OTA_CONF_EXT_FLASH_AREA_LEN              0x00058000
 /*---------------------------------------------------------------------------*/

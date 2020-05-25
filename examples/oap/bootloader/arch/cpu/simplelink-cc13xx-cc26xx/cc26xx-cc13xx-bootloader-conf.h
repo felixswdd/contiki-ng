@@ -35,9 +35,9 @@
 /* Limit the bootloader image to the early pages on flash. */
 #define FLASH_FW_ORIGIN  0x00000000
 #if BUILD_WITH_BOOTLOADER_DEBUG
-#define FLASH_FW_LENGTH  0x00003000
+#define FLASH_FW_LENGTH  0x00008000
 #else
-#define FLASH_FW_LENGTH  0x00002000
+#define FLASH_FW_LENGTH  0x00006000
 #endif
 
 /* Total internal flash length */

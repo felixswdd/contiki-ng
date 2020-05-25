@@ -47,7 +47,7 @@
 #include "sys/log.h"
 #define LOG_MODULE "main"
 #ifndef LOG_LEVEL_BOOTLOADER
-#define LOG_LEVEL_BOOTLOADER LOG_LEVEL_DBG
+#define LOG_LEVEL_BOOTLOADER LOG_LEVEL_INFO
 #endif
 #define LOG_LEVEL LOG_LEVEL_BOOTLOADER
 /*---------------------------------------------------------------------------*/
